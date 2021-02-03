@@ -1,12 +1,20 @@
-const { expect } = require('chai');
+const {
+    expect,
+} = require('chai');
 
-const { data } = require('./../data');
+const {
+    data,
+} = require('./../data');
 
-const { processArray } = require('./../src/functions');
+const {
+    processArray,
+} = require('./../src/functions');
+
+const FILTERING_KEY = 'animals';
 
 describe('Filter array by pattern', () => {
     it('Should be able to filter by "ry"', () => {
-        expect(processArray(data, '--filter=ry')).to.deep.equal([
+        expect(processArray(data, ['--filter=ry'], FILTERING_KEY)).to.deep.equal([
             {
               name: 'Uzuzozne',
               people: [
@@ -39,7 +47,7 @@ describe('Filter array by pattern', () => {
 
 describe('Count items', () => {
     it('Should be able to count items', () => {
-        expect(processArray(data, '--count')).to.deep.equal([{
+        expect(processArray(data, ['--count'])).to.deep.equal([{
             name: 'Dillauti [5]',
             people:
               [{
@@ -414,7 +422,7 @@ describe('Count items', () => {
 
 describe('Filter and count items', () => {
     it('Should be able to filter and count items', () => {
-        expect(processArray(data, '--count --filter=ry')).to.deep.equal([
+        expect(processArray(data, ['--count', '--filter=ry'], FILTERING_KEY)).to.deep.equal([
             {
               name: 'Uzuzozne [1]',
               people: [
