@@ -10,7 +10,8 @@
         "test/**/*.js"
     ],
     "reporter": [
-        "lcov"
+        "lcov",
+        "text"
     ],
     "cache": true,
     "all": true

@@ -9,7 +9,7 @@
   "scripts": {
     "cover": "nyc npm test",
     "lint": "eslint src/ test/",
-    "test": "mocha --recursive --exit"
+    "test": "mocha --recursive --exit test/"
   },
   "repository": {
     "type": "git",

@@ -2,12 +2,12 @@
     "env": {
         "es6": true,
         "node": true,
-        "mocha": true,
-        "ecmaVersion": 2018
+        "mocha": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": 2018
     },
     "rules": {
         "accessor-pairs": "error",
