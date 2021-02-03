@@ -1,7 +1,7 @@
 /**
  * 
- * THIS IS A LIGHTWEIGHT VERSION, MAY BE QUITE HARSH TO UNDERSTAND (BUT FUNNY TO CODE)
- * FOR A MORE READABLE FILE, SEE FILE functions_readable.js
+ * THIS IS A READABLE VERSION, EASIER TO UNDERSTAND THAN LIGHTWEIGHT ONES
+ * FOR A MORE LIGHTWEIGHT FILE, SEE FILE functions_lightweigth.js
  */
 
 /**
@@ -96,7 +96,24 @@ const filterArray = (array, filters, filteringKey = undefined) => {
  * 
  * @returns {Array}
  */
-const countArray = (array) => {};
+const countArray = (array) => {
+    return array.map((item) => Object.keys(item).reduce((currentItem, key) => {
+        // If value is array, apply recursively algorithm on it, and add
+        // length to parent's name
+        if (Array.isArray(item[key])) {
+            return {
+                ...currentItem,
+                [key]: countArray(item[key]),
+                name: `${currentItem.name} [${item[key].length}]`,
+            };
+        }
+
+        return {
+            ...currentItem,
+            [key]: item[key],
+        };
+    }, { name: item.name || '' }));
+};
 
 /**
  * 

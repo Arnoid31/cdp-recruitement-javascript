@@ -1,6 +1,6 @@
 const {
     processArray,
-} = require('./src/functions');
+} = require('./src/functions_lightweigth');
 
 const {
     data,
