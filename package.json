@@ -1,0 +1,30 @@
+{
+  "name": "cdp-recruitement-javascript",
+  "version": "1.0.0",
+  "description": "Adeo's technical test",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "cover": "nyc npm test",
+    "lint": "eslint src/ test/",
+    "test": "mocha --recursive --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arnoid31/cdp-recruitement-javascript.git"
+  },
+  "author": "Arnaud Commelin",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Arnoid31/cdp-recruitement-javascript/issues"
+  },
+  "homepage": "https://github.com/Arnoid31/cdp-recruitement-javascript#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.19.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0"
+  }
+}
